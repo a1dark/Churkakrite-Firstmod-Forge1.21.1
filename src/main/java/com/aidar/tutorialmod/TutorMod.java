@@ -1,6 +1,7 @@
 package com.aidar.tutorialmod;
 
 import com.aidar.tutorialmod.block.ModBlocks;
+import com.aidar.tutorialmod.item.ModCreativeModeTabs;
 import com.aidar.tutorialmod.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -38,6 +39,7 @@ public class TutorMod
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 

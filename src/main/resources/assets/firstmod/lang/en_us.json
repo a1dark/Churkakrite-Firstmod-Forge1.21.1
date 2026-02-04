@@ -3,5 +3,8 @@
   "item.firstmod.churkakrite_raw": "Raw Churkrakrite",
 
   "block.firstmod.churkakrite_block": "Churkakrite Block",
-  "block.firstmod.raw_churkakrite_block": "Raw Churkakrite Block"
+  "block.firstmod.raw_churkakrite_block": "Raw Churkakrite Block",
+
+  "creativetab.firstmod.churkakrite_items": "Churkakrite Items",
+  "creativetab.firstmod.churkakrite_blocks": "Churkakrite Blocks"
 }
