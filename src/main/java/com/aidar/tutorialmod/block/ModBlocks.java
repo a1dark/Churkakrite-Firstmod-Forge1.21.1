@@ -20,12 +20,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CHURKAKRITE_BLOCK = registerBlock("churkakrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-
+                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
     public static final RegistryObject<Block> RAW_CHURKAKRITE_BLOCK = registerBlock("raw_churkakrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
-
+                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
