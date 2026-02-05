@@ -2,9 +2,12 @@ package com.aidar.tutorialmod.block;
 
 import com.aidar.tutorialmod.TutorMod;
 import com.aidar.tutorialmod.item.ModItems;
+import com.mojang.blaze3d.shaders.Uniform;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,10 +23,16 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CHURKAKRITE_BLOCK = registerBlock("churkakrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
+                    .strength(6f).requiresCorrectToolForDrops().sound(SoundType.NETHER_GOLD_ORE)));
     public static final RegistryObject<Block> RAW_CHURKAKRITE_BLOCK = registerBlock("raw_churkakrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+                    .strength(6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final RegistryObject<Block> CHURKAKRITE_ORE = registerBlock("churkakrite_ore",
+            () -> new DropExperienceBlock(UniformInt.of(1,2),BlockBehaviour.Properties.of()
+                    .strength(6f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<Block> CHURKAKRITE_DEEPSLATE_ORE = registerBlock("churkakrite_deepslate_ore",
+            () -> new DropExperienceBlock(UniformInt.of(1,2),BlockBehaviour.Properties.of()
+                    .strength(7f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

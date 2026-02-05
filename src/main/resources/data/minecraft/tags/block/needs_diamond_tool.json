@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "firstmod:churkakrite_block",
+    "firstmod:raw_churkakrite_block",
+    "firstmod:churkakrite_ore",
+    "firstmod:churkakrite_deepslate_ore"
+  ]
+}
