@@ -32,6 +32,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RAW_CHURKAKRITE_BLOCK.get());
                         output.accept(ModBlocks.CHURKAKRITE_ORE.get());
                         output.accept(ModBlocks.CHURKAKRITE_DEEPSLATE_ORE.get());
+                        output.accept(ModBlocks.ANCIENT_BLOCK.get());
                     })
                     .build());
 

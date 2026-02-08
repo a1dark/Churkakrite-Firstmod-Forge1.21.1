@@ -1,6 +1,7 @@
 package com.aidar.tutorialmod.block;
 
 import com.aidar.tutorialmod.TutorMod;
+import com.aidar.tutorialmod.block.custom.AncientBlock;
 import com.aidar.tutorialmod.item.ModItems;
 import com.mojang.blaze3d.shaders.Uniform;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -33,6 +34,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> CHURKAKRITE_DEEPSLATE_ORE = registerBlock("churkakrite_deepslate_ore",
             () -> new DropExperienceBlock(UniformInt.of(1,2),BlockBehaviour.Properties.of()
                     .strength(7f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
+    public static final RegistryObject<Block> ANCIENT_BLOCK = registerBlock("ancient_block",
+            () -> new AncientBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
