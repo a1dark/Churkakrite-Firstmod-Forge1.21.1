@@ -21,6 +21,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHURKAKRITE_RAW.get());
 
                         output.accept(ModItems.CHISEL.get());
+
+                        output.accept(ModItems.CHINUTE.get());
+
+                        output.accept(ModItems.CHURKAKRITE_ASHES.get());
                     })
                     .build());
     public static final RegistryObject<CreativeModeTab> CHURKAKRITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("churkakrite_blocks_tab",

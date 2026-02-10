@@ -2,6 +2,9 @@
   "item.firstmod.churkakrite": "Churkakrite Ingot",
   "item.firstmod.churkakrite_raw": "Raw Churkrakrite",
   "item.firstmod.chisel": "Chisel",
+  "item.firstmod.chinute": "Chinute",
+  "item.firstmod.churkakrite_ashes": "Churkakrite Ash",
+
 
 
   "block.firstmod.churkakrite_block": "Churkakrite Block",
@@ -9,6 +12,7 @@
   "block.firstmod.churkakrite_ore": "Churkakrite Ore",
   "block.firstmod.churkakrite_deepslate_ore": "Churkakrite Deepslate Ore",
   "block.firstmod.ancient_block": "Ancient Block",
+
 
   "creativetab.firstmod.churkakrite_items": "Churkakrite Items",
   "creativetab.firstmod.churkakrite_blocks": "Churkakrite Blocks"

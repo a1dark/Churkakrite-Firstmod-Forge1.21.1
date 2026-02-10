@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "firstmod:churkakrite"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "firstmod:churkakrite_ashes"
+  }
+}
