@@ -15,5 +15,9 @@
 
 
   "creativetab.firstmod.churkakrite_items": "Churkakrite Items",
-  "creativetab.firstmod.churkakrite_blocks": "Churkakrite Blocks"
+  "creativetab.firstmod.churkakrite_blocks": "Churkakrite Blocks",
+
+  "tooltip.firstmod.ancient_block.tooltip": "Some kind of Ancient Block?",
+  "tooltip.firstmod.chisel": "Press Shift for more information!",
+  "tooltip.firstmod.chisel.shift_down": "There's no more information ahahaha"
 }
