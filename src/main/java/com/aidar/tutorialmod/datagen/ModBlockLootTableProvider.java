@@ -1,0 +1,54 @@
+package com.aidar.tutorialmod.datagen;
+
+import com.aidar.tutorialmod.block.ModBlocks;
+import com.aidar.tutorialmod.item.ModItems;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Set;
+
+public class ModBlockLootTableProvider extends BlockLootSubProvider {
+    protected ModBlockLootTableProvider(HolderLookup.Provider pRegistries) {
+        super(Set.of(), FeatureFlags.REGISTRY.allFlags(), pRegistries);
+    }
+
+    @Override
+    protected void generate() {
+        dropSelf(ModBlocks.CHURKAKRITE_BLOCK.get());
+        dropSelf(ModBlocks.ANCIENT_BLOCK.get());
+        dropSelf(ModBlocks.RAW_CHURKAKRITE_BLOCK.get());
+
+        this.add(ModBlocks.CHURKAKRITE_ORE.get(),
+                block -> createOreDrop(ModBlocks.CHURKAKRITE_ORE.get(), ModItems.CHURKAKRITE_RAW.get()));
+        this.add(ModBlocks.CHURKAKRITE_DEEPSLATE_ORE.get(),
+                block -> createMultipleOreDrops(ModBlocks.CHURKAKRITE_DEEPSLATE_ORE.get(), ModItems.CHURKAKRITE_RAW.get(), 1, 2));
+    }
+
+    protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        return this.createSilkTouchDispatchTable(
+                pBlock, this.applyExplosionDecay(
+                        pBlock, LootItem.lootTableItem(item)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
+                                .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))
+                )
+        );
+    }
+    @Override
+    protected Iterable<Block> getKnownBlocks() {
+        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+    }
+}
